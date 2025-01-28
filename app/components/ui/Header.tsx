@@ -4,14 +4,14 @@ import Image from "next/image";
 const Header = () => {
   return (
     <div className="flex flex-row items-center justify-between">
-      <Link href={"/concept"}></Link>
+      <Link href={"/concept"}>Concepto</Link>
       <Image
-        src={"@/app/public/assets/logo.png"}
+        src={"/assets/psyvg.png"}
         width={250}
         height={250}
         alt="logo for the project"
       />
-      <Link href={"/login"}></Link>
+      <Link href={"/login"}>Iniciar sesión</Link>
     </div>
   );
 };

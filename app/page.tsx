@@ -1,9 +1,8 @@
+import Header from "./components/ui/Header";
+import Container from "./components/ui/Container";
+
 const Home = () => {
-  return (
-    <div className="">
-      <p>Bienvenido!</p>
-    </div>
-  );
+  return <Container></Container>;
 };
 
 export default Home;
