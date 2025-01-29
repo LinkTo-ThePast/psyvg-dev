@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="flex flex-row items-center px-8 py-4">
+    <div className="flex flex-row items-center">
       <Link href={"/concept"}>Concepto</Link>
       <Image
         src={"/assets/psyvg.png"}
