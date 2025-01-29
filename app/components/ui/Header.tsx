@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <div className="flex flex-row items-center justify-between">
+    <div className="flex flex-row items-center px-8 py-4">
       <Link href={"/concept"}>Concepto</Link>
       <Image
         src={"/assets/psyvg.png"}
-        width={250}
-        height={250}
-        alt="logo for the project"
+        width={135}
+        height={130}
+        alt="Logo del proyecto."
       />
       <Link href={"/login"}>Iniciar sesión</Link>
     </div>
