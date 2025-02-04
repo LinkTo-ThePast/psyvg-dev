@@ -3,7 +3,7 @@ import FormWrapper from "../components/ui/auth/FormWrapper";
 const LoginPage = () => {
   return (
     <FormWrapper>
-      <div className="m-auto gap-5 p- bg-slate-600">
+      <div className=" flex flex-col m-auto gap-2 p- bg-slate-600">
         <h1 className="mb-4">welcome to login page</h1>
         <form>
           <label>
@@ -14,6 +14,13 @@ const LoginPage = () => {
             <p>Password:</p>
             <input type="password" name="password"></input>
           </label>
+          <br></br>
+          <button
+            type="submit"
+            className="mt-4 justify-center items-center size-10 bg-white w-16"
+          >
+            Login
+          </button>
         </form>
       </div>
     </FormWrapper>
