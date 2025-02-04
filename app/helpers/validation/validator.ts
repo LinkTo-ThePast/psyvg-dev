@@ -1,6 +1,6 @@
 import { EMAIL_PATTERN, PASS_PATTERN } from "./constants";
 
-class validation {
+class Validator {
   readonly email_pattern: RegExp = EMAIL_PATTERN;
   readonly pass_pattern: RegExp = PASS_PATTERN;
 
@@ -8,7 +8,7 @@ class validation {
   password!: string;
   errorMessage!: object;
 
-  emailValidator(email: string): boolean {
+  public emailValidator(email: string): boolean {
     if (email.match(this.email_pattern)) {
       return true;
     } else if (email === null) {
@@ -25,7 +25,7 @@ class validation {
     }
   }
 
-  passwordValidator(password: string): boolean {
+  public passwordValidator(password: string): boolean {
     if (password.match(this.pass_pattern)) {
       return true;
     } else if (password === null) {
@@ -43,4 +43,5 @@ class validation {
   }
 }
 
-export default validation;
+const ValidatorInstance = new Validator();
+export default ValidatorInstance;
