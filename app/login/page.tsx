@@ -1,4 +1,4 @@
-import FormWrapper from "../components/ui/auth/FormWrapper";
+import FormWrapper from "../components/auth/FormWrapper";
 import ValidatorInstance from "../helpers/validation/validator";
 import Validator from "../helpers/validation/validator";
 

@@ -4,7 +4,7 @@ import Container from "./components/ui/Container";
 const Home = () => {
   return (
     <Container>
-      <header>
+      <header className="min-w-full">
         <Header></Header>
       </header>
     </Container>
