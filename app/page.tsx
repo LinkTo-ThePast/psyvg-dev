@@ -23,6 +23,14 @@ const Home = () => {
         height={100}
         alt="icon for the page."
       />
+      <Navbar>
+        <ul>
+          <Link href={"/resources"}>Recursos</Link>
+        </ul>
+        <ul>
+          <Link href={"/login"}>Iniciar sesión</Link>
+        </ul>
+      </Navbar>
     </Header>
   );
 };
