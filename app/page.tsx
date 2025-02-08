@@ -1,13 +1,29 @@
-import Header from "./components/ui/Header";
-import Container from "./components/ui/Container";
+import Link from "next/link";
+import Header from "./components/headers/Header";
+import Navbar from "./components/nav/Navbar";
+import Image from "next/image";
 
 const Home = () => {
   return (
-    <Container>
-      <header className="min-w-full">
-        <Header></Header>
-      </header>
-    </Container>
+    <Header>
+      <Navbar>
+        <ul>
+          <Link href={"/concept"}>Concepto</Link>
+        </ul>
+        <ul>
+          <Link href={"/source"}>Inspiración</Link>
+        </ul>
+        <ul>
+          <Link href={"/data"}>Datos</Link>
+        </ul>
+      </Navbar>
+      <Image
+        src={"/assets/psyvg.png"}
+        width={100}
+        height={100}
+        alt="icon for the page."
+      />
+    </Header>
   );
 };
 
