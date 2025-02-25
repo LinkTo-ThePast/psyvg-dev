@@ -4,11 +4,16 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="relative z-50 hidden lg:block">
-      <div className="w-full max-w-7xl m-auto py-8 flex_between_center">
-        <div className="flex_start_center">
-          <div>
-            <Link href={"/concepto"}>Concepto</Link>
-          </div>
+      <div className="w-full max-w-7xl m-auto py-8 flex_b_center">
+        <div className="flex_s_center"></div>
+        <div>
+          <Link href={"/concept"}>Concepto</Link>
+        </div>
+        <div>
+          <Link href={"/inspiration"}>Inspiración</Link>
+        </div>
+        <div>
+          <Link href={"/data"}>Datos</Link>
         </div>
         <div>
           <Image
