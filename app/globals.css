@@ -25,6 +25,10 @@ body {
   font-size: 100%;
 }
 
-.flex_between_center {
+.flex_b_center {
   @apply flex justify-between items-center;
+}
+
+.flex_s_center {
+  @apply flex justify-start items-center;
 }

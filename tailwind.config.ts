@@ -8,13 +8,18 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundColor: {
+        primary_white: "#fffdf7",
+        secondary_white: "#fff",
+        secondary_green: "#09543d",
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        welcomePage: {
-          primary: "#09543D",
-          secondary: "#FFFDF7",
-        },
+        primary_white: "#fffdf7",
+        secondary_white: "#fff",
+        primary_green: "#09543d",
+        primary_pink: "#FFA9E9",
+        primary_violet: "#6d0596",
+        secondary_violet: "#461e10",
       },
     },
   },
