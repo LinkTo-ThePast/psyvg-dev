@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../../reusable/buttons/Button";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const { push } = useRouter();
+
   return (
     <div className="relative z-50 hidden lg:block">
       <div className="w-full max-w-7xl m-auto py-8 flex_b_center">
@@ -26,10 +30,20 @@ const Header = () => {
         </div>
         <div className="flex_s_center">
           <div className="">
-            <Link href={"/register"}>Registrarse</Link>
+            <Button
+              text="Registratse"
+              variant="primary"
+              onClick={() => {
+                push("/register");
+              }}
+            />
           </div>
           <div className="">
-            <Link href={"/login"}>Iniciar sesión</Link>
+            <Button
+              text="Registratse"
+              variant="primary"
+              onClick={() => push("/login")}
+            />
           </div>
         </div>
       </div>
