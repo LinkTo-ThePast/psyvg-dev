@@ -12,6 +12,7 @@ const RegisterPractice = () => {
   const isNumber = (userInput: string) => {
     for (let i = 0; i < userInput.length; i++) {
       if (userInput.charCodeAt(i) < 48 || userInput.charCodeAt(i) > 57) {
+        console.log("wrong method");
         return false;
       }
     }
