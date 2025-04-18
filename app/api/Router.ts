@@ -7,11 +7,7 @@ export interface HTTPMethods {
 
 // working with generics
 
-interface IUserMock {
-  id: string;
-  name: string;
+const sumTwoValues<T> = (num1: number, num2: number) => {
+  return num1 + num2;
 }
 
-// using in some method
-
-const user = client.get<IUserMock>("url where to call for resource!");
