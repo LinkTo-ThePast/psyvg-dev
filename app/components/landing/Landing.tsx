@@ -1,10 +1,11 @@
-import Banner from "./Banner";
+import MainLayout from "../layouts/main-layout/MainLayout";
+import Header from "./Header";
 
 const Landing = () => {
   return (
-    <>
-      <Banner />
-    </>
+    <MainLayout>
+      <Header />
+    </MainLayout>
   );
 };
 
