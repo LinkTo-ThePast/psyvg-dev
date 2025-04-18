@@ -4,3 +4,14 @@ export interface HTTPMethods {
   put<T>(URL: string, body: object): Promise<T>;
   delete<T>(URL: string): Promise<T>;
 }
+
+// working with generics
+
+interface IUserMock {
+  id: string;
+  name: string;
+}
+
+// using in some method
+
+const user = client.get<IUserMock>("url where to call for resource!");
