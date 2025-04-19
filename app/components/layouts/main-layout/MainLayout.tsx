@@ -3,24 +3,19 @@ import { useEffect, useState } from "react";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   // effect for shrinking
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [initialLayout, setInitialLayout] = useState<boolean>(true);
   // trigger effect
   useEffect(() => {
-    setIsLoading(false);
+    setInitialLayout(false);
   }, []);
 
   return (
-    <main
-      id="main-container"
-      className="min-h-screen min-w-full bg-primary_white"
-    >
+    <main id="main-container" className={`min-h-screen bg-primary_white`}>
       <div
         id="main-card"
-        className={`${
-          isLoading
-            ? "min-h-screen w-full"
-            : "min-h-screen w-full p-6 rounded-md"
-        } bg-primary_green transition duration-300 ease-in-out`}
+        className={`bg-primary_green w-full min-h-screen ${
+          initialLayout ? "rounded-none" : "rounded-3xl p-6"
+        } transition-all duration-700 ease-in-out`}
       >
         {children}
       </div>

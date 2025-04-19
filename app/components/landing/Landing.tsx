@@ -1,6 +1,6 @@
 import MainLayout from "../layouts/main-layout/MainLayout";
 import Header from "./Header";
-import MainSection from "./MainSeciton";
+import MainSection from "./MainSection";
 
 const Landing = () => {
   return (
