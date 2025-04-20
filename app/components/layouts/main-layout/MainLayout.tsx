@@ -13,7 +13,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main
       id="main-container"
-      className={`min-h-screen bg-primary_white relative overflow-hidden`}
+      className={`min-h-screen bg-black relative overflow-hidden`}
     >
       <div
         id="main-card"
