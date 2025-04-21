@@ -13,6 +13,12 @@ const survey = {
     ["0-1", "2-3", "4-5", "6-7"],
   // Fourth questions!
   "Te consideras un videojugador..": [
-    "casual: no le das mucha importancia a los videojuegos. ",
+    "casual: te sumerges en los videjuegos, pero en sesiones cortas o de manera poco frecuente. ",
+    "promedio: juegas videojuegos regularmente, pero no de manera muy seria o competetiva. ",
+    "serio: eres un videojugador muy dedicado o competetivo.",
   ],
+  // Fifth question
+  "¿Cuáles han sido algunos videojuegos actuales que has disfrutado jugar?": [],
 };
+
+export default survey;
