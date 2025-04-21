@@ -11,4 +11,8 @@ const survey = {
   // Third question!
   "En una semana normal o tranquila, ¿cuántos días juegas videojuegos al menos 30 minutos?":
     ["0-1", "2-3", "4-5", "6-7"],
+  // Fourth questions!
+  "Te consideras un videojugador..": [
+    "casual: no le das mucha importancia a los videojuegos. ",
+  ],
 };
