@@ -9,6 +9,7 @@ const Question = () => {
       <h1 className="font-bold text-center mt-10 text-2xl">
         {question.question}
       </h1>
+      <h1>test</h1>
     </section>
   );
 };
