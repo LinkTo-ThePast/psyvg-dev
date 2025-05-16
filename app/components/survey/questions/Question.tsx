@@ -1,18 +1,29 @@
 "use client";
-import survey from "@/app/utils/survey/questions/survey";
+import survey, { QuestionType } from "@/app/utils/survey/questions/survey";
 import { useState } from "react";
 
 const Question = () => {
   // aux counter to mange logic render
   const [counterStepIndex, setCounterStepIndex] = useState<number>(0);
-  console.log(counterStepIndex);
+  // aux to identify type of questions
+  const [typeOfQuestion, setTypeOfQuestion] = useState<QuestionType>();
 
-  // retrieve current question
+  // retrieve current question ---> main variable
   const question = survey[counterStepIndex];
 
   const handleQuestionType = () => {
     switch (question.type) {
       case "text_free":
+        return setTypeOfQuestion("text_free");
+
+      case "single_choice":
+        return setTypeOfQuestion("single_choice");
+
+      case "multiple_choice":
+        return setTypeOfQuestion("multiple_choice");
+
+      case "hybrid":
+        return setTypeOfQuestion("hybrid");
     }
   };
 
@@ -42,6 +53,9 @@ const Question = () => {
     setCounterStepIndex(counterStepIndex - 1); // we return previous question
   };
 
+  console.log(counterStepIndex, typeOfQuestion, question);
+  console.log(handleQuestionType);
+
   return (
     <section
       id="question-card-container"
@@ -55,12 +69,11 @@ const Question = () => {
                 {question.question}
               </h1>
             </legend>
-
-            {question.type === "multiple_choice" &&
-              question.answers.map((question) => (
+            {typeOfQuestion === "text_free" && // text_free generate an input for text
+              question.answers.map((q) => (
                 <label>
-                  <input type="radio" name="answers" key={question} />
-                  {question}
+                  <input key={q} type="text" />
+                  {q}
                 </label>
               ))}
 
@@ -71,11 +84,18 @@ const Question = () => {
                   {question}
                 </label>
               ))}
-
-            {question.type === "text_free" &&
+            {question.type === "multiple_choice" &&
               question.answers.map((question) => (
                 <label>
-                  <input type="text" name="answers" key={question} />
+                  <input type="radio" name="answers" key={question} />
+                  {question}
+                </label>
+              ))}
+
+            {question.type === "hybrid" &&
+              question.answers.map((question) => (
+                <label>
+                  <input type="radio" name="answers" key={question} />
                   {question}
                 </label>
               ))}

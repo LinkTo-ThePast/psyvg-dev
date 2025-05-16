@@ -1,6 +1,12 @@
+export type QuestionType =
+  | "multiple_choice"
+  | "single_choice"
+  | "hybrid"
+  | "text_free";
+
 interface IQuestion {
   _id: number;
-  type: "multiple_choice" | "single_choice" | "hybrid" | "text_free";
+  type: QuestionType;
   question: string;
   answers: string[];
 }
@@ -12,7 +18,7 @@ const survey: IQuestion[] = [
     question: "¿Cuál es tu género?",
     answers: ["Femenino", "Masculino", "No binario", "Prefiero describirme"],
   },
-  { _id: 2, type: "text_free", question: "Cuántos años tienes?", answers: [] },
+  { _id: 2, type: "text_free", question: "¿Cuántos años tienes?", answers: [] },
   {
     _id: 3,
     type: "single_choice",
