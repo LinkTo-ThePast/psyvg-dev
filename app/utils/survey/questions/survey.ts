@@ -37,6 +37,19 @@ const survey: IQuestion[] = [
       "¿Cuáles han sido algunos videjuegos recientes que has disfrutado jugar?",
     answers: [],
   },
+  {
+    _id: 6,
+    type: "multiple_choice",
+    question:
+      "¿En cuál de las siguientes plataformas usualmente juegas a videjuegos?",
+    answers: [
+      "Console",
+      "PC/MAC",
+      "Celular/Tablet",
+      "Consola portatil",
+      "Sistemas de realidad virtual",
+    ],
+  },
 ];
 
 export default survey;

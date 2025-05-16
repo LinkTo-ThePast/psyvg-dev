@@ -49,11 +49,30 @@ const Question = () => {
                 {question.question}
               </h1>
             </legend>
-            {question.answers.map((question) => (
-              <label>
-                <input type="radio" name="answers" key={question} /> {question}
-              </label>
-            ))}
+
+            {question.type === "multiple_choice" &&
+              question.answers.map((question) => (
+                <label>
+                  <input type="radio" name="answers" key={question} />
+                  {question}
+                </label>
+              ))}
+
+            {question.type === "single_choice" &&
+              question.answers.map((question) => (
+                <label>
+                  <input type="radio" name="answers" key={question} />
+                  {question}
+                </label>
+              ))}
+
+            {question.type === "text_free" &&
+              question.answers.map((question) => (
+                <label>
+                  <input type="text" name="answers" key={question} />
+                  {question}
+                </label>
+              ))}
 
             <div className="flex-row space-x-5">
               <button
