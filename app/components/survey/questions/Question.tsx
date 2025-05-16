@@ -10,6 +10,12 @@ const Question = () => {
   // retrieve current question
   const question = survey[counterStepIndex];
 
+  const handleQuestionType = () => {
+    switch (question.type) {
+      case "text_free":
+    }
+  };
+
   const handleNext = () => {
     event?.preventDefault();
     const data = {
