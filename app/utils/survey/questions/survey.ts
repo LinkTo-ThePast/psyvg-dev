@@ -9,6 +9,7 @@ interface IQuestion {
   type: QuestionType;
   question: string;
   answers: string[];
+  placeholder?: string;
 }
 
 const survey: IQuestion[] = [
@@ -18,7 +19,13 @@ const survey: IQuestion[] = [
     question: "¿Cuál es tu género?",
     answers: ["Femenino", "Masculino", "No binario", "Prefiero describirme"],
   },
-  { _id: 2, type: "text_free", question: "¿Cuántos años tienes?", answers: [] },
+  {
+    _id: 2,
+    type: "text_free",
+    question: "¿Cuántos años tienes?",
+    answers: [],
+    placeholder: "Coloca tu edad...",
+  },
   {
     _id: 3,
     type: "single_choice",

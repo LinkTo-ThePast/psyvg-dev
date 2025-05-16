@@ -1,12 +1,26 @@
 "use client";
 import survey, { QuestionType } from "@/app/utils/survey/questions/survey";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Question = () => {
+interface IQuestionComponent {
+  answer: string | string[];
+  onChange: (value: string) => void;
+  onNext: () => void;
+  onPrevious: () => void;
+}
+
+const Question = ({
+  answer,
+  onChange,
+  onNext,
+  onPrevious,
+}: IQuestionComponent) => {
   // aux counter to mange logic render
   const [counterStepIndex, setCounterStepIndex] = useState<number>(0);
   // aux to identify type of questions
   const [typeOfQuestion, setTypeOfQuestion] = useState<QuestionType>();
+  // aux to idenfity current answers
+  const [currentAnswer, setCurrentAnswer] = useState<String | String[]>("");
 
   // retrieve current question ---> main variable
   const question = survey[counterStepIndex];
@@ -29,12 +43,15 @@ const Question = () => {
 
   const handleNext = () => {
     event?.preventDefault();
+    setCurrentAnswer(answer);
     const data = {
       user: "currentUser", //---> current user taking the survey
       answers: {
-        question1: "answer1",
+        question: [answer],
       },
     };
+
+    console.log(data);
 
     // send updates to the initial form
     const updateAndSaveState = () => {
@@ -53,8 +70,9 @@ const Question = () => {
     setCounterStepIndex(counterStepIndex - 1); // we return previous question
   };
 
-  console.log(counterStepIndex, typeOfQuestion, question);
-  console.log(handleQuestionType);
+  const formData = {
+    idQuestion: "answer or [answers]",
+  };
 
   return (
     <section
@@ -72,31 +90,62 @@ const Question = () => {
             {typeOfQuestion === "text_free" && // text_free generate an input for text
               question.answers.map((q) => (
                 <label>
-                  <input key={q} type="text" />
+                  <input
+                    key={question._id}
+                    type="text"
+                    placeholder={question.placeholder}
+                    value={answer}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      onChange(e.target.value)
+                    }
+                  />
                   {q}
                 </label>
               ))}
 
-            {question.type === "single_choice" &&
-              question.answers.map((question) => (
+            {question.type === "single_choice" && // radio becaus u can just select one
+              question.answers.map((q) => (
                 <label>
-                  <input type="radio" name="answers" key={question} />
-                  {question}
+                  <input
+                    type="radio"
+                    name="answers"
+                    key={question._id}
+                    value={answer}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      onChange(e.target.value);
+                    }}
+                  />
+                  {q}
                 </label>
               ))}
-            {question.type === "multiple_choice" &&
-              question.answers.map((question) => (
+            {question.type === "multiple_choice" && // checkbox to allow multiple choices
+              question.answers.map((q) => (
                 <label>
-                  <input type="radio" name="answers" key={question} />
-                  {question}
+                  <input
+                    type="checkbox"
+                    name="answers"
+                    key={question._id}
+                    value={answer}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      onChange(e.target.value);
+                    }}
+                  />
+                  {q}
                 </label>
               ))}
 
-            {question.type === "hybrid" &&
-              question.answers.map((question) => (
+            {question.type === "hybrid" && // complex, because admit input text when selection one option like "prefiero describirme" --> edge case
+              question.answers.map((q) => (
                 <label>
-                  <input type="radio" name="answers" key={question} />
-                  {question}
+                  <input
+                    type="radio"
+                    name="answers"
+                    key={question._id}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      onChange(e.target.value);
+                    }}
+                  />
+                  {q}
                 </label>
               ))}
 
