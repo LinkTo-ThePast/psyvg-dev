@@ -1,14 +1,17 @@
 "use client";
 import survey from "@/app/utils/survey/questions/survey";
+import { useState } from "react";
 
 const Question = () => {
-  // aux counter
-  const counterStep = 0;
+  // aux counter to mange logic render
+  const [counterStepIndex, setCounterStepIndex] = useState<number>(0);
+  console.log(counterStepIndex);
 
-  // retrieve current questions
-  const question = survey[counterStep];
+  // retrieve current question
+  const question = survey[counterStepIndex];
 
-  const handleNext = (counterStep: number) => {
+  const handleNext = () => {
+    event?.preventDefault();
     const data = {
       user: "currentUser", //---> current user taking the survey
       answers: {
@@ -20,15 +23,17 @@ const Question = () => {
     const updateAndSaveState = () => {
       const initialForm = data;
     };
-
-    return counterStep++; // we pass next question
+    if (counterStepIndex === survey.length - 1) return null; //
+    setCounterStepIndex(counterStepIndex + 1); // we pass next question
   };
 
-  // click on "next", => counterStep ++ 1 -> 2
+  // click on "next", => counterStepIndex ++ 1 -> 2
   // render quetion accordingly to the current step
 
-  const handlePrevious = (counterStep: number) => {
-    return counterStep--; // we return previous question
+  const handlePrevious = () => {
+    event?.preventDefault();
+    if (counterStepIndex === 0) return null;
+    setCounterStepIndex(counterStepIndex - 1); // we return previous question
   };
 
   return (
@@ -55,13 +60,13 @@ const Question = () => {
             </label>
             <div className="flex-row space-x-5">
               <button
-                onClick={() => handleNext(counterStep)}
+                onClick={() => handlePrevious()}
                 className="rounded-2xl bg-primary_pink p-3 max-w-xl"
               >
                 Atrás
               </button>
               <button
-                onClick={() => handlePrevious(counterStep)}
+                onClick={() => handleNext()}
                 className="rounded-2xl bg-primary_pink p-3 max-w-xl"
               >
                 Siguiente
