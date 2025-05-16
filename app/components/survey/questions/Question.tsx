@@ -49,15 +49,12 @@ const Question = () => {
                 {question.question}
               </h1>
             </legend>
-            <label>
-              <input type="radio" name="firstQ" /> {question.answers[0]}
-            </label>
-            <label>
-              <input type="radio" name="secondQ" /> {question.answers[1]}
-            </label>
-            <label>
-              <input type="radio" name="thirdQ" /> {question.answers[2]}
-            </label>
+            {question.answers.map((question) => (
+              <label>
+                <input type="radio" name="answers" key={question} /> {question}
+              </label>
+            ))}
+
             <div className="flex-row space-x-5">
               <button
                 onClick={() => handlePrevious()}
