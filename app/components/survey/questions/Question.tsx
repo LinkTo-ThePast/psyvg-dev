@@ -25,22 +25,6 @@ const Question = ({
   // retrieve current question ---> main variable
   const question = survey[counterStepIndex];
 
-  const handleQuestionType = () => {
-    switch (question.type) {
-      case "text_free":
-        return setTypeOfQuestion("text_free");
-
-      case "single_choice":
-        return setTypeOfQuestion("single_choice");
-
-      case "multiple_choice":
-        return setTypeOfQuestion("multiple_choice");
-
-      case "hybrid":
-        return setTypeOfQuestion("hybrid");
-    }
-  };
-
   const handleNext = () => {
     event?.preventDefault();
     setCurrentAnswer(answer);
