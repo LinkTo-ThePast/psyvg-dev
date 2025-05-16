@@ -17,7 +17,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <div
         id="main-card"
-        className={`bg-primary_green transition-all duration-700 ease-in-out ${
+        className={`bg-primary_green transition-all duration-1000 ease-in-out ${
           initialLayout
             ? "rounded-none p-0 w-full h-screen"
             : "rounded-3xl p-6 h-[95vh] w-[95vw]"
