@@ -7,7 +7,7 @@ const QuestionRenderer = ({ question, answers }: IQuestionRenderer) => {
   return (
     <section
       id="question-card-container"
-      className="flex flex-col bg-primary_white rounded-lg mt-4"
+      className="flex flex-col bg-primary_white rounded-lg mt-4 text-yellow-500"
     >
       <div className="justify-center items-center text-center">
         <form className="p-4">
